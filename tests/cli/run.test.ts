@@ -67,7 +67,7 @@ describe("runCli", () => {
     expect(h.out()).toContain("Usage");
     const v = io();
     expect(await runCli(["version"], v.io)).toBe(0);
-    expect(v.out()).toMatch(/@francoischastel\/jev-code \d+\.\d+\.\d+/);
+    expect(v.out()).toMatch(/@goldjunge91\/jev-code \d+\.\d+\.\d+/);
     const u = io();
     expect(await runCli(["frobnicate"], u.io)).toBe(2);
     expect(u.err()).toContain("unknown command");

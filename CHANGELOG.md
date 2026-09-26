@@ -6,13 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-09-19
+## [0.1.0] - 2026-09-27
 
 ### Added
 
 - Five tools shared by every harness: `jev_classify`, `jev_check`, `jev_score`, `jev_rank`, `jev_ask`.
 - MCP server over stdio for Claude Code, Codex, and OpenCode (`jev-code mcp`).
-- Native Pi extension and pi package manifest (`pi install npm:@francoischastel/jev-code`).
+- Native Pi extension and pi package manifest (`pi install npm:@goldjunge91/jev-code`).
 - Optional OpenCode custom tool (`integrations/opencode/jev.ts`).
 - The `jev` skill (Agent Skills spec) with question-design guide, recipes, tool and CLI references,
   and a building-with-TypeSafe guide adapted from TypeSafe's official skill (MIT).
@@ -20,6 +20,8 @@ All notable changes to this project are documented here. The format follows
 - `jev-code doctor` with an optional live API check.
 - CLI access to every tool (`jev-code classify --input payload.json`).
 - Claude Code plugin manifest and marketplace so the repository installs as a plugin.
+- OpenRouter-backed Jev tools published as `@goldjunge91/jev-code`; original MIT copyright and
+  attribution to François Chastel are preserved.
 
 [Unreleased]: https://github.com/goldjunge91/jev-code/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/goldjunge91/jev-code/releases/tag/v0.1.0

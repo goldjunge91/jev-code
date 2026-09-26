@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/goldjunge91/jev-code/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/goldjunge91/jev-code/actions/workflows/ci.yml/badge.svg" /></a>
-  <a href="https://www.npmjs.com/package/@francoischastel/jev-code"><img alt="npm" src="https://img.shields.io/npm/v/%40francoischastel%2Fjev-code" /></a>
+  <a href="https://www.npmjs.com/package/@goldjunge91/jev-code"><img alt="npm" src="https://img.shields.io/npm/v/%40goldjunge91%2Fjev-code" /></a>
   <img alt="Node 20+" src="https://img.shields.io/badge/node-%3E%3D20-brightgreen" />
   <a href="LICENSE"><img alt="MIT" src="https://img.shields.io/badge/license-MIT-blue" /></a>
 </p>
@@ -51,25 +51,21 @@ to reach for it.
 export OPENROUTER_API_KEY=sk-or-...
 ```
 
-**2. Clone the fork and install into your agents** (Node.js 20+):
+**2. Install into your agents** (Node.js 20+):
 
 ```bash
-git clone https://github.com/goldjunge91/jev-code.git
-cd jev-code
-npm ci
-npm run build
-node dist/cli.js setup --command "node $PWD/dist/cli.js mcp" --pi-source "$PWD"
+npx -y @goldjunge91/jev-code setup
 ```
 
-That detects the harnesses on your machine and, for each one, copies the skill and registers this
-checkout's tool. Add harness names to be explicit (`setup claude codex pi opencode`), `--project`
-to install into the current repository instead of your user profile, or `--dry-run` to see the
-plan first.
+That detects the harnesses on your machine and, for each one, copies the skill and registers the
+Jev tool. Add harness names to be explicit (`setup claude codex pi opencode`), `--project` to
+install into the current repository instead of your user profile, or `--dry-run` to see the plan
+first.
 
 **3. Check it works:**
 
 ```bash
-node dist/cli.js doctor --live
+npx -y @goldjunge91/jev-code doctor --live
 ```
 
 **4. Restart your agent** (or `/reload` inside pi) and ask for something that needs a classifier:
@@ -136,7 +132,7 @@ override per call. Policy stays in your hands; Jev supplies the probabilities.
 <summary><strong>Claude Code</strong></summary>
 
 `jev-code setup claude` copies the skill to `~/.claude/skills/jev/` and runs
-`claude mcp add --scope user jev -- npx -y @francoischastel/jev-code mcp`. The tools appear as
+`claude mcp add --scope user jev -- npx -y @goldjunge91/jev-code mcp`. The tools appear as
 `mcp__jev__jev_classify` and friends; the skill is `/jev`.
 
 Prefer a plugin that updates itself? This repository is also a Claude Code plugin marketplace:
@@ -155,7 +151,7 @@ project-scope notes: [docs/harnesses/claude-code.md](docs/harnesses/claude-code.
 <summary><strong>Codex</strong></summary>
 
 `jev-code setup codex` copies the skill to `~/.agents/skills/jev/` (Codex's user-level skills
-directory, shared with Pi and OpenCode) and runs `codex mcp add jev -- npx -y @francoischastel/jev-code mcp`.
+directory, shared with Pi and OpenCode) and runs `codex mcp add jev -- npx -y @goldjunge91/jev-code mcp`.
 Without the `codex` binary it appends a `[mcp_servers.jev]` table to `~/.codex/config.toml`
 instead. Invoke the skill with `$jev`. Details: [docs/harnesses/codex.md](docs/harnesses/codex.md).
 
@@ -166,7 +162,7 @@ instead. Invoke the skill with `$jev`. Details: [docs/harnesses/codex.md](docs/h
 
 Pi has no MCP client, so jev-code is also a [pi package](https://pi.dev/docs/latest/packages) whose
 extension registers the five tools natively. `jev-code setup pi` runs
-`pi install npm:@francoischastel/jev-code` and copies the skill to `~/.agents/skills/jev/`. Run
+`pi install npm:@goldjunge91/jev-code` and copies the skill to `~/.agents/skills/jev/`. Run
 `/reload` inside pi afterwards. Details: [docs/harnesses/pi.md](docs/harnesses/pi.md).
 
 </details>
@@ -191,7 +187,7 @@ works for the 70+ agents it supports:
 npx skills add goldjunge91/jev-code --skill jev
 ```
 
-Pair it with the MCP server (`npx -y @francoischastel/jev-code mcp`) in your agent's MCP config,
+Pair it with the MCP server (`npx -y @goldjunge91/jev-code mcp`) in your agent's MCP config,
 or let the agent fall back to the CLI.
 
 </details>
@@ -272,3 +268,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for conventions and the release process.
 [MIT](LICENSE) © François Chastel. `skills/jev/references/building-with-typesafe.md` adapts the
 [TypeSafe agent skill](https://github.com/typesafe-ai/skills), © 2026 TypeSafe AI, MIT. Jev and
 TypeSafe are trademarks of TypeSafe AI; this project is not affiliated with TypeSafe.
+
+This fork is based on [jev-code by François Chastel](https://github.com/FrancoisChastel/jev-code);
+the original MIT license and copyright notice are preserved.

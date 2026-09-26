@@ -2,7 +2,7 @@
   "mcpServers": {
     "jev": {
       "command": "npx",
-      "args": ["-y", "@francoischastel/jev-code", "mcp"]
+      "args": ["-y", "@goldjunge91/jev-code", "mcp"]
     }
   }
 }
