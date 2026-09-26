@@ -99,7 +99,7 @@ describe("runSetup", () => {
     expect(calls.map((c) => `${c.args[0]} ${c.args[1]}`)).toEqual([
       "mcp add",
       "mcp add",
-      "install npm:@francoischastel/jev-code",
+      "install npm:@goldjunge91/jev-code",
     ]);
     expect(calls[0]?.args).toEqual([
       "mcp",
@@ -112,7 +112,7 @@ describe("runSetup", () => {
       "--",
       "npx",
       "-y",
-      "@francoischastel/jev-code",
+      "@goldjunge91/jev-code",
       "mcp",
     ]);
     expect(calls[1]?.args).toEqual([
@@ -124,7 +124,7 @@ describe("runSetup", () => {
       "--",
       "npx",
       "-y",
-      "@francoischastel/jev-code",
+      "@goldjunge91/jev-code",
       "mcp",
     ]);
     expect(existsSync(join(home, ".claude", "skills", "jev", "SKILL.md"))).toBe(true);
@@ -165,7 +165,7 @@ describe("runSetup", () => {
     const byKey = Object.fromEntries(real.actions.map((a) => [`${a.harness}:${a.kind}`, a]));
     expect(byKey["claude:tool"]?.status).toBe("manual");
     expect(byKey["claude:tool"]?.detail).toContain(
-      "claude mcp add --scope user jev -- npx -y @francoischastel/jev-code mcp",
+      "claude mcp add --scope user jev -- npx -y @goldjunge91/jev-code mcp",
     );
     expect(byKey["pi:tool"]?.status).toBe("manual");
     expect(byKey["codex:tool"]?.status).toBe("installed");

@@ -1,5 +1,5 @@
 /**
- * Public API of @francoischastel/jev-code.
+ * Public API of @goldjunge91/jev-code.
  *
  * - `JevClient` talks to Jev on OpenRouter's System One API.
  * - `TOOLS` are the five judgment tools shared by every harness adapter.

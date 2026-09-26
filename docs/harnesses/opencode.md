@@ -3,8 +3,8 @@
 ## Automatic
 
 ```bash
-npx -y @francoischastel/jev-code setup opencode            # ~/.config/opencode/opencode.json
-npx -y @francoischastel/jev-code setup opencode --project  # ./opencode.json
+npx -y @goldjunge91/jev-code setup opencode            # ~/.config/opencode/opencode.json
+npx -y @goldjunge91/jev-code setup opencode --project  # ./opencode.json
 ```
 
 What it does:
@@ -24,7 +24,7 @@ Add to `opencode.json`:
   "mcp": {
     "jev": {
       "type": "local",
-      "command": ["npx", "-y", "@francoischastel/jev-code", "mcp"],
+      "command": ["npx", "-y", "@goldjunge91/jev-code", "mcp"],
       "enabled": true,
       "environment": { "OPENROUTER_API_KEY": "sk-or-..." }
     }
@@ -40,7 +40,7 @@ Install the skill with `npx skills add goldjunge91/jev-code --skill jev -a openc
 If you would rather not spawn an MCP server, `integrations/opencode/jev.ts` defines the same five
 tools with OpenCode's `tool()` helper. Copy it to `.opencode/tools/jev.ts` (project) or
 `~/.config/opencode/tools/jev.ts` (global), and add the package to the matching `package.json`
-(`npm install @francoischastel/jev-code`). The named exports become `jev_classify`, `jev_check`,
+(`npm install @goldjunge91/jev-code`). The named exports become `jev_classify`, `jev_check`,
 and so on.
 
 ## Verify
